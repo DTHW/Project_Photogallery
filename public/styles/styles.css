@@ -129,98 +129,129 @@
         "i20 i13 i16 i17 i18 i19 i21"
     ;
 }
-/* Gallery layout - done */
+/* Gallery layout - DONE */
 
-body
+/* Apply DRY coding */
+
+body, .link:hover:before, .link:hover:after, figure img, .dimOverlay
 {
     width: 100%;
-    background-color: #5C6672; 
 }
 
-.head
+.head, .main, .foot
 {
     margin: 20px;
-    padding-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: #3A435E;
+
+}
+
+.head, .main, .foot, .foot div
+{
+    display: flex;
+}
+
+.head, .main, .foot, .link, .dimOverlay
+{
     color: white;
+}
+
+.head, .main, .foot ,figure img
+{
     border-radius: 10px;
 }
 
-span
+.head a, .link
+{
+    text-decoration: none;
+}
+
+.head a, .dimOverlay
+{
+    transition: all 1s;
+
+}
+
+.head a:hover, h1
+{
+    font-size: 18px;
+}
+
+/* DRY Missing check down */
+
+h1, p, a
+{
+    font-weight: 400;
+}
+
+span, div a
 {
     background: linear-gradient(to right, white, black);
     background-clip: text;
     color: transparent;
 }
 
-a:before 
+p, a, .link
 {
-    top: -2.5%;
-    left: -1%;
-    border-top: 2px solid white;
-    border-left: 2px solid white;
-}
-
-a:after 
-{
-    bottom: -2.5%;
-    right: -1%;
-    border-bottom: 2px solid white;
-    border-right: 2px solid white;
-}
-
-a:before, a:after 
-{
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    transition: all 0.3s ease;
-}
-
-a:hover
-{
-    padding: 5px;
-    border: 2px solid white;
-}
-.main
-{
-    margin: 20px;
-    display: flex;
-    background-color: #3A435E;
-    color: white;
-    border-radius: 10px;
-}
-
-.foot
-{
-    color: white;
-    background-color: #3A435E;
-    margin: 20px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-    border-radius: 10px;
-}
-
-h1
-{
-    font-family: "Permanent Marker", sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-}
-
-p, a
-{
-    font-family: "Rammetto One", sans-serif;
-    font-weight: 400;
     font-size: 9px;
 }
 
+.imageWrapper, .link
+{
+	position: relative;
+}
+
+.foot, .foot div
+{
+    justify-content: center;
+}
+
+.link:after, div p
+{
+    border-bottom: 2px solid white;
+
+}
+
+.link:before, .link:after, .link:hover:before, .link:hover:after
+{
+    transition: all 0.3s ease;
+}
+
+.link:before, .link:after, .dimOverlay
+{
+    position: absolute;
+}
+
+.link:hover:before, .link:hover:after, figure img
+{
+	height: 100%;
+}
+
+
+
+
+/* DRY - DONE */
+
+body
+{
+    background-color: #5C6672; 
+}
+
+.head
+{
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.head a
+{
+    color: #1b39c9;
+}
+
+.head a:hover
+{
+    color: purple;
+}
 
 .head h1::after, .head h1::before
 {
@@ -229,35 +260,33 @@ p, a
     display: inline-block;
     width: 20px; 
     height: 20px;
-    content:"";
-    margin-left: 10px;
-    margin-right: 10px;
+    content: "";
+    /* DRY -> */    margin-left: 10px;
+    /* DRY -> */    margin-right: 10px;
+}
+
+h1
+{
+    font-family: "Permanent Marker", sans-serif;
+}
+
+p, a
+{
+    font-family: "Rammetto One", sans-serif;
 }
 
 figure img
 {   
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    border-radius: 10px;
-}
-
-.imageWrapper
-{
-    position: relative;
 }
 
 .dimOverlay
 {
-    position:absolute;
     background: rgba(57, 57, 57, 0.7);
-    color: white;
     font-size: 10px;
     font-weight: bolder;
     padding: 2px;
-    width: 100%;
     inset: 0;
-    transition: background-color 1s, color 1s;
 }
 
 .dimOverlay:hover
@@ -266,6 +295,53 @@ figure img
     color: rgba(57, 57, 57, 0.0);
 }
 
+.foot
+{
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.link
+{
+	font-weight: bold;
+    /* DRY -> */	padding: 10px;
+}
+
+.link:before 
+{
+    top: -2.5%;
+    left: -1%;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+
+.link:after 
+{
+    bottom: -2.5%;
+    right: -1%;
+    border-right: 2px solid white;
+}
+
+.link:before, .link:after 
+{
+    content: '';
+    width: 10px;
+    height: 10px;
+}
+
+.foot div
+{
+    flex-basis: 100%;
+}
+
+div p
+{
+    padding-bottom: 2px;
+}
+
+/* Media Query DRY? */
+
 /* Tablet Design */
 @media (min-width: 601px)
 {
@@ -273,13 +349,7 @@ figure img
     {
         font-size: 25px;
     }
-    
-    p, a
-    {
-        font-size: 13px;
-    }
-    
-    
+
     .head h1::after, .head h1::before
     {
         background-size: 25px 25px;
@@ -289,10 +359,24 @@ figure img
         margin-right: 10px;
     }
 
+    p, a
+    {
+        font-size: 13px;
+    }
+
+    .head a:hover
+    {
+        font-size: 26px;
+    }
+
     .dimOverlay
     {
         font-size: 13px;
-        padding: 2px;
+    }
+
+    .link
+    {
+        font-size: 13px;
     }
 }
 
@@ -305,12 +389,6 @@ figure img
         font-size: 50px;
     }
 
-    p, a
-    {
-        font-size: 25px;
-    }
-
-
     .head h1::after, .head h1::before
     {
         background-size: 45px 45px;
@@ -318,6 +396,16 @@ figure img
         height: 45px;
         margin-left: 20px;
         margin-right: 20px;
+    }
+
+    p, a
+    {
+        font-size: 25px;
+    }
+    
+    .head a:hover
+    {
+        font-size: 50px;
     }
 
     .dimOverlay
@@ -330,5 +418,10 @@ figure img
     {
         content: "Creator: \000A";
         white-space: pre;
+    }
+
+    .link
+    {
+        font-size: 20px;
     }
 }
