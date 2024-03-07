@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rammetto+One&display=swap');
+
+/* RESET */
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Gallery layout */
+.gallery01image
+{
+    grid-area: i01;
+}
+
+.gallery02image
+{
+    grid-area: i02;
+}
+
+.gallery03image
+{
+    grid-area: i03;
+}
+
+.gallery04image
+{
+    grid-area: i04;
+}
+
+.gallery05image
+{
+    grid-area: i05;
+}
+
+.gallery06image
+{
+    grid-area: i06;
+}
+
+.gallery07image
+{
+    grid-area: i07;
+}
+
+.gallery08image
+{
+    grid-area: i08;
+}
+
+.gallery09image
+{
+    grid-area: i09;
+}
+
+.gallery10image
+{
+    grid-area: i10;
+}
+
+.gallery11image
+{
+    grid-area: i11;
+}
+
+.gallery12image
+{
+    grid-area: i12;
+}
+
+.gallery13image
+{
+    grid-area: i13;
+}
+
+.gallery14image
+{
+    grid-area: i14;
+}
+
+.gallery15image
+{
+    grid-area: i15;
+}
+
+.gallery16image
+{
+    grid-area: i16;
+}
+
+.gallery17image
+{
+    grid-area: i17;
+}
+
+.gallery18image
+{
+    grid-area: i18;
+}
+
+.gallery19image
+{
+    grid-area: i19;
+}
+
+.gallery20image
+{
+    grid-area: i20;
+}
+
+.gallery21image
+{
+    grid-area: i21;
+}
+
+.gallery
+{   
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 7vw);
+    grid-template-areas: 
+        "i20 i01 i01 i02 i03 i04 i21"
+        "i20 i05 i06 i07 i08 i09 i21"
+        "i20 i10 i11 i11 i12 i09 i21"
+        "i20 i13 i11 i11 i14 i15 i21"
+        "i20 i13 i16 i17 i18 i19 i21"
+    ;
+}
+/* Gallery layout - done */
+
+body
+{
+    width: 100%;
+    background-color: #5C6672; 
+}
+
+.head
+{
+    margin: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3A435E;
+    color: white;
+    border-radius: 10px;
+}
+
+span
+{
+    background: linear-gradient(to right, white, black);
+    background-clip: text;
+    color: transparent;
+}
+
+a:before 
+{
+    top: -2.5%;
+    left: -1%;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+
+a:after 
+{
+    bottom: -2.5%;
+    right: -1%;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+}
+
+a:before, a:after 
+{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    transition: all 0.3s ease;
+}
+
+a:hover
+{
+    padding: 5px;
+    border: 2px solid white;
+}
+.main
+{
+    margin: 20px;
+    display: flex;
+    background-color: #3A435E;
+    color: white;
+    border-radius: 10px;
+}
+
+.foot
+{
+    color: white;
+    background-color: #3A435E;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    border-radius: 10px;
+}
+
+h1
+{
+    font-family: "Permanent Marker", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+p, a
+{
+    font-family: "Rammetto One", sans-serif;
+    font-weight: 400;
+    font-size: 9px;
+}
+
+
+.head h1::after, .head h1::before
+{
+    background-image: url(../images/camera_icon.png);
+    background-size: 20px 20px;
+    display: inline-block;
+    width: 20px; 
+    height: 20px;
+    content:"";
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+figure img
+{   
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.imageWrapper
+{
+    position: relative;
+}
+
+.dimOverlay
+{
+    position:absolute;
+    background: rgba(57, 57, 57, 0.7);
+    color: white;
+    font-size: 10px;
+    font-weight: bolder;
+    padding: 2px;
+    width: 100%;
+    inset: 0;
+    transition: background-color 1s, color 1s;
+}
+
+.dimOverlay:hover
+{
+    background: rgba(57, 57, 57, 0);    
+    color: rgba(57, 57, 57, 0.0);
+}
+
+/* Tablet Design */
+@media (min-width: 601px)
+{
+    h1
+    {
+        font-size: 25px;
+    }
+    
+    p, a
+    {
+        font-size: 13px;
+    }
+    
+    
+    .head h1::after, .head h1::before
+    {
+        background-size: 25px 25px;
+        width: 25px; 
+        height: 25px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .dimOverlay
+    {
+        font-size: 13px;
+        padding: 2px;
+    }
+}
+
+
+/* Desktop Design */
+@media (min-width: 1280px)
+{
+    h1
+    {
+        font-size: 50px;
+    }
+
+    p, a
+    {
+        font-size: 25px;
+    }
+
+
+    .head h1::after, .head h1::before
+    {
+        background-size: 45px 45px;
+        width: 45px; 
+        height: 45px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .dimOverlay
+    {
+        font-size: 25px;
+        padding: 10px;
+    }
+
+    .dimOverlay::before
+    {
+        content: "Creator: \000A";
+        white-space: pre;
+    }
+}
