@@ -5,7 +5,7 @@ Welcome and thank you for visiting my project.
 
 I enjoyed creating it and I learned some usefull tricks about grid structures as well as creating multple layers for additional effects. <br>
 This type of project also gave me the oppertunity to add two of my own pictures into the mix. <br>
-You can see those two pictures left and right as they show the <a href="https://en.wikipedia.org/wiki/Heterochromia_iridum">two different eyes</a> of my dog.
+You can see those two pictures left and right as they show the <a href="https://en.wikipedia.org/wiki/Heterochromia_iridum" target="_blank">two different eyes</a> of my dog.
 
 Table of Contents
 <ol>
