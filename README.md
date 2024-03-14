@@ -15,6 +15,7 @@ Table of Contents
   <li><a href="#contributors-">Contributors</a></li>
   <li><a href="#resources-used-">Resources Used</a></li>
   <li><a href="#lessons-learned-">Lessons Learned</li>
+  <li><a href="#license-">License</li>
 </ol>
 
 ## About the project 📘
@@ -99,5 +100,11 @@ Thanks goes to these wonderful people
 * Different use cases of layering within HTML
 * Deeper understanding of grid based structures in CSS
 * Limitations of HTML/CSS without the use of JavaScript and other advanced tools
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## License 📃
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
