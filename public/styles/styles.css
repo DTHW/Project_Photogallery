@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rammetto+One&display=swap');
 
-/* RESET */
+/*********** RESET ***********/
 * 
 {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
+    padding: 0;
 }
 
-/* Gallery layout */
+/*********** Gallery layout ***********/
 .gallery01image
 {
     grid-area: i01;
@@ -116,9 +116,7 @@
 
 .gallery
 {   
-    display: grid;
     gap: 10px;
-    padding: 10px;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(5, 7vw);
     grid-template-areas: 
@@ -128,12 +126,13 @@
         "i20 i13 i11 i11 i14 i15 i21"
         "i20 i13 i16 i17 i18 i19 i21"
     ;
+    display: grid;
 }
-/* Gallery layout - DONE */
+/*********** Gallery layout - DONE ***********/
 
-/* Apply DRY coding */
+/*********** Apply DRY coding ***********/
 
-body, .link:hover:before, .link:hover:after, figure img, .dimOverlay
+body, figure img, .dimOverlay, .link:hover:before, .link:hover:after
 {
     width: 100%;
 }
@@ -141,7 +140,10 @@ body, .link:hover:before, .link:hover:after, figure img, .dimOverlay
 .head, .main, .foot
 {
     margin: 20px;
+    box-shadow:  10px 10px 10px #000000,
+    0px 0px 0px #ffffff;
     background-color: #3A435E;
+
 }
 
 .head, .main, .foot, .foot div
@@ -169,12 +171,10 @@ body, .link:hover:before, .link:hover:after, figure img, .dimOverlay
     transition: all 1s;
 }
 
-.head a:hover, h1
+h1, .head a:hover
 {
     font-size: 18px;
 }
-
-/* DRY Missing check down */
 
 h1, p, a
 {
@@ -193,6 +193,16 @@ p, a, .link
     font-size: 9px;
 }
 
+p, a
+{
+    font-family: "Rammetto One", sans-serif;
+}
+
+.gallery, .link
+{
+    padding: 10px;
+}
+
 .imageWrapper, .link
 {
 	position: relative;
@@ -203,10 +213,21 @@ p, a, .link
     justify-content: center;
 }
 
-.link:after, div p
+div p, .link:after
 {
     border-bottom: 2px solid white;
+}
 
+.head h1::after, .head h1::before
+{
+    content: "";
+    display: inline-block;
+    margin-left: 10px; 
+    margin-right: 10px;
+    width: 20px; 
+    height: 20px;
+    background-image: url(../images/camera_icon.png);
+    background-size: 20px 20px;
 }
 
 .link:before, .link:after, .link:hover:before, .link:hover:after
@@ -224,12 +245,14 @@ p, a, .link
 	height: 100%;
 }
 
-/* DRY - DONE */
+.link:before, .link:after 
+{
+    content: '';
+    width: 10px;
+    height: 10px;
+}
 
-
-
-
-
+/********** DRY - DONE **********/
 
 body
 {
@@ -238,9 +261,9 @@ body
 
 .head
 {
-    padding-bottom: 20px;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 20px;
 }
 
 .head a
@@ -248,31 +271,9 @@ body
     color: #1b39c9;
 }
 
-.head a:hover
-{
-    color: purple;
-}
-
-.head h1::after, .head h1::before
-{
-    background-image: url(../images/camera_icon.png);
-    background-size: 20px 20px;
-    display: inline-block;
-    width: 20px; 
-    height: 20px;
-    content: "";
-    margin-left: 10px; 
-    margin-right: 10px;
-}
-
 h1
 {
     font-family: "Permanent Marker", sans-serif;
-}
-
-p, a
-{
-    font-family: "Rammetto One", sans-serif;
 }
 
 figure img
@@ -282,30 +283,44 @@ figure img
 
 .dimOverlay
 {
+    inset: 0;
+    padding: 2px;
     background: rgba(57, 57, 57, 0.7);
     font-size: 10px;
     font-weight: bolder;
-    padding: 2px;
-    inset: 0;
+}
+
+.foot
+{
+    gap: 35px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.link
+{
+	font-weight: bold;
+}
+
+.foot div
+{
+    flex-basis: 100%;
+}
+
+div p
+{
+    padding-bottom: 2px;
+}
+
+.head a:hover
+{
+    color: purple;
 }
 
 .dimOverlay:hover
 {
     background: rgba(57, 57, 57, 0);    
     color: rgba(57, 57, 57, 0.0);
-}
-
-.foot
-{
-    padding: 20px;
-    flex-wrap: wrap;
-    gap: 35px;
-}
-
-.link
-{
-	font-weight: bold;
-    /* DRY -> */	padding: 10px;
 }
 
 .link:before 
@@ -323,42 +338,33 @@ figure img
     border-right: 2px solid white;
 }
 
-.link:before, .link:after 
-{
-    content: '';
-    width: 10px;
-    height: 10px;
-}
 
-.foot div
-{
-    flex-basis: 100%;
-}
-
-div p
-{
-    padding-bottom: 2px;
-}
-
-/* Media Query DRY? */
-
-/* Tablet Design */
+/*********** Tablet Design ***********/
 @media (min-width: 601px)
 {
+    .head h1::after, .head h1::before
+    {
+        width: 25px; 
+        height: 25px;
+        background-size: 25px 25px;
+    }
+    
+    p, a
+    {
+        font-size: 13px;
+    }
+
     h1
     {
         font-size: 25px;
     }
 
-    .head h1::after, .head h1::before
+    .dimOverlay
     {
-        background-size: 25px 25px;
-        width: 25px; 
-        height: 25px;
-
+        font-size: 13px;
     }
 
-    p, a
+    .link
     {
         font-size: 13px;
     }
@@ -367,50 +373,45 @@ div p
     {
         font-size: 26px;
     }
-
-    .dimOverlay
-    {
-        font-size: 13px;
-    }
-
-    .link
-    {
-        font-size: 13px;
-    }
 }
 
 
-/* Desktop Design */
+/*********** Desktop Design ***********/
 @media (min-width: 1280px)
 {
-    h1
-    {
-        font-size: 50px;
-    }
-
     .head h1::after, .head h1::before
     {
-        background-size: 45px 45px;
-        width: 45px; 
-        height: 45px;
         margin-left: 20px;
         margin-right: 20px;
+        width: 45px; 
+        height: 45px;
+        background-size: 45px 45px;
     }
 
     p, a
     {
         font-size: 25px;
     }
-    
-    .head a:hover
+
+    h1
     {
         font-size: 50px;
     }
 
     .dimOverlay
     {
-        font-size: 25px;
         padding: 10px;
+        font-size: 25px;
+    }
+
+    .link
+    {
+        font-size: 20px;
+    }
+
+    .head a:hover
+    {
+        font-size: 50px;
     }
 
     .dimOverlay::before
@@ -419,8 +420,4 @@ div p
         white-space: pre;
     }
 
-    .link
-    {
-        font-size: 20px;
-    }
 }
