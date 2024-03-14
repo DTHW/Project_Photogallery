@@ -39,8 +39,8 @@ To compromise with that I show the creators name up front and then let them fade
 * Dimmed out pictures until hovered over
 * Creator names hidden when picture focus on
 * Three different kinds of resolutions supported
-  - Mobile view (1 to 600 pixel in width)
-  - Tablet view (601 1279 pixel in width)
+  - Mobile view (1 - 600 pixel in width)
+  - Tablet view (601 - 1279 pixel in width)
   - Desktop view (1280 < pixel in width)   
 * Reference links to all picture sources
 
